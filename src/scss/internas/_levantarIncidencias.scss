@@ -1,0 +1,31 @@
+@use '../base/variables' as v;
+
+.levantar-incidencia-titulo {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+}
+
+#formulario-nueva-incidencia {
+    .nueva-incidencia-activo {
+        padding: 2rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 3rem;
+        h2 {
+            font-size: 2rem;
+            margin: 0;
+        }
+    }
+    .nueva-incidencia-general {
+        padding: 2rem;
+        textarea {
+            width: 100%;
+            height: 10rem;
+        }
+        .nueva-incidencia-general-fechas {
+            margin-top: 1rem;
+            display: grid;
+            grid-template-columns: 20% 80%;
+        }
+    }
+}

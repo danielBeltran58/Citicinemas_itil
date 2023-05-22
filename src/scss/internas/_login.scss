@@ -1,0 +1,35 @@
+@use '../base/variables' as v;
+
+.img-login {
+    display: block;
+    margin: 0 auto;
+}
+
+#formulario-login {
+    margin: 0 20%;
+    fieldset {
+        padding: 2rem;
+        legend {
+            font-size: 3rem;
+        }
+        .campo-label-input {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            margin-bottom: 2rem;
+            /*label {
+                font-size: 2rem;
+            }
+            input {
+                padding: 1rem 2rem;
+                font-size: 2rem;
+            }*/
+        }
+    }
+    /*input[type='submit'] {
+        background-color: v.$azul;
+        &:hover {
+            background-color: v.$azul_bajito;
+            transition: all ease 0.5s;
+        }
+    }*/
+}

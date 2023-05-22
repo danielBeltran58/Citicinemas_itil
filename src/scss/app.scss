@@ -1,0 +1,17 @@
+/* Base */
+@use './base/global';
+@use './base/variables';
+@use './base/normalize';
+@use './base/inputs';
+
+/* Layout */
+@use './layout/header';
+
+/* Internas */
+@use './internas/login';
+@use './internas/consultarActivos';
+@use './internas/levantarIncidencias';
+@use './internas/consultarTecnicos';
+@use './internas/incidenciasAsignadas';
+@use './internas/nuevoActivo';
+@use './internas/consultarIncidecias';

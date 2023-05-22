@@ -1,0 +1,17 @@
+{
+    "name": "danie/itil_php",
+    "description": "itil de citicinemas",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Models\\" : "./includes/models/"
+        }
+    },
+    "authors": [
+        {
+            "name": "daniel",
+            "email": "danielBeltran58@yahoo.com"
+        }
+    ],
+    "require": {}
+}

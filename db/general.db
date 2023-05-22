@@ -1,0 +1,119 @@
+create database itil_v2;
+use itil_v2;
+
+create table Complejo(
+	id varchar(100) not null,
+    nombre varchar(100) not null,
+    direccion varchar(200) not null,
+    constraint PK_idComplejo primary key(id),
+    constraint UNIQUE_nombreComplejo unique (nombre)
+);
+
+create table AreaComplejo(
+	id varchar(15) not null,
+    nombre varchar(100) not null,
+    jefeArea int not null,
+    corporativo varchar(100) not null,
+    constraint PK_areaComplejo primary key(id),
+    constraint UNIQUE_nombreAreaComplejo unique (nombre)
+);
+alter table AreaComplejo add constraint FK_areaComplejoJefeArea foreign key(jefeArea) references Empleado(id);
+alter table AreaComplejo add constraint FK_areaComplejoCorporativo foreign key(corporativo) references Complejo(id);
+alter table AreaComplejo modify jefeArea varchar(100);
+alter table AreaComplejo drop constraint UNIQUE_nombreAreaComplejo;
+
+create table Empleado(
+	id int auto_increment not null,
+    nombre varchar(100) not null,
+    apellidoP varchar(100) not null,
+    apellidoM varchar(100) not null,
+    email varchar(150) not null,
+    contrasena varchar(150) not null,
+    rol varchar(15) not null,
+    areaComplejo varchar(15) not null,
+    constraint PK_idEmpleado primary key(id),
+    constraint UNIQUE_emailEmpleado unique(email),
+    constraint FK_rolEmpleado foreign key(rol) references Rol(id),
+    constraint FK_areaComplejoEmpleado foreign key(areaComplejo) references AreaComplejo(id)
+);
+
+create table Rol(
+	id varchar(15) not null,
+    nombre varchar(70) not null,
+    constraint PK_idRol primary key(id),
+    constraint UNIQUE_nombreRol unique(nombre)
+);
+
+create table Activo(
+	id int auto_increment not null,
+    areaComplejo varchar(15) not null,
+    estado char(1) not null,
+    constraint PK_idActivo primary key(id),
+    constraint FK_activoAreaComplejo foreign key(areaComplejo) references AreaComplejo(id),
+    constraint CHECK_activoEstado check( estado = '1' or estado = '2' or estado = '3' )
+    /*
+    estado 1 = FUNCIONANDO,
+    estado 2 = EN PROCESO DE INCIDENCIA,
+    estado 3 = INUTILIZABLE
+    */
+);
+
+create table Computadora(
+	activo int not null,
+    modelo varchar(150) not null,
+    marca varchar(30) not null,
+    almacenamiento char(4) not null,
+    ram char(2) not null,
+    procesador varchar(50) not null,
+    tarjetaGrafica varchar(100) not null,
+    constraint FK_activoComputadora foreign key(activo) references Activo(id)
+);
+alter table computadora drop constraint FK_activoComputadora;
+alter table computadora add sistemaOperativo varchar(50) not null;
+
+create table Impresora(
+	activo int not null,
+	marca varchar(30) not null,
+    modelo varchar(150) not null,
+    tipoConector char(1) not null,
+    tecnologiaImpresion char(1) not null,
+    velocidadImpresionMonocromatrica float not null,
+    velocidadImpresionColor float not null,
+    constraint FK_activoImpresora foreign key(activo) references Activo(id),
+    constraint CHECK_tipoConector check( tipoConector = '1' or tipoConector = '2' or tipoConector = '3' ),
+    constraint CHECK_activoTecnologiaImpresion check( tecnologiaImpresion = '1' or tecnologiaImpresion = '2' or tecnologiaImpresion = '3' )
+	/*
+    TIPO DE CONECTOR
+    estado 1 = USB,
+    estado 2 = Bluetooth,
+    estado 3 = USB y Bluetooth
+    */
+	/*
+    TECNOLOGIA DE IMPRESION 
+    estado 1 = Inyección de tinta,
+    estado 2 = Laser,
+    estado 3 = Termica
+    */
+);
+alter table impresora drop constraint FK_activoImpresora;
+
+create table Incidencia(
+	id int auto_increment not null,
+    activo int not null,
+    asunto longtext not null,
+    tecnico int not null,
+    inicio date not null,
+    termino date not null,
+    estado char(1) not null,
+    constraint PK_idIncidencia primary key(id),
+    constraint FK_activoIncidencia foreign key(activo) references Activo(id),
+    constraint FK_tecnicoInicidencia foreign key(tecnico) references Empleado(id),
+    constraint CHECK_estadoIncidencia check( estado = '1' or estado = '2' or estado = '3' )
+    /*
+    CONTEXTO DE ESTADO
+    estado 1 = EN PROCESO
+    estado 2 = RETRASADO
+    estado 3 = COMPLETADO
+    */
+);
+alter table incidencia drop constraint FK_tecnicoInicidencia;

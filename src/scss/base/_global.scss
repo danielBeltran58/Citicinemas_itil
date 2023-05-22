@@ -1,0 +1,19 @@
+@use '../base/variables' as v;
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Hanken Grotesk', sans-serif;
+}
+
+.contenedor {
+    margin: 0 10%;
+}
+
+.bordeado {
+    border: solid 0.2rem v.$negro;
+    padding: 2rem;
+}

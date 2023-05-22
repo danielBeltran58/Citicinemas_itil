@@ -1,0 +1,35 @@
+
+
+.filtrado {
+    display: flex;
+    justify-content: start;
+    .select-tecnicos {
+        display: flex;
+        align-items: center;
+        margin-right: 3rem;
+    }
+    .btn-buscar {
+        display: inline-block;
+    }
+}
+
+.informacion {
+    .basico {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .fechas-estado {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.acciones {
+    p {
+        display: inline-block;
+    }
+    div {
+        display: inline-block;
+        margin-left: 3rem;
+    }
+}

@@ -1,0 +1,18 @@
+
+
+#formulario-nuevo-activo {
+    .informacion-basica {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        div {
+            margin-bottom: 2rem;
+        }
+    }
+    .especificaciones-tecnicas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        div {
+            margin-bottom: 2rem;
+        }
+    }
+}

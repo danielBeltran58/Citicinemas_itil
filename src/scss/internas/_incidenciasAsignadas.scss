@@ -1,0 +1,53 @@
+@use '../base/variables' as v;
+
+#incidencias-asignadas-tecnico {
+    .barra-superior {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        h1 {
+            font-size: 3rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+        }
+    }
+    .contenedor-incidencias {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        .incidencia {
+            margin-bottom: 2rem;
+            h3 {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+            .fechas {
+                display: flex;
+                justify-content: flex-start;
+                p {
+                    margin-right: 2rem;
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+            .estado-incidencia {
+                display: flex;
+                justify-content: flex-start;
+                .estado-success {
+                    background-color: v.$success;
+                }
+                .estado-warning {
+                    background-color: v.$warning;
+                }
+                .estado-danger {
+                    background-color: v.$danger;
+                }
+                h3 {
+                    padding: 1rem;
+                }
+            }
+        }
+    }
+}

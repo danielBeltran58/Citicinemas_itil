@@ -1,0 +1,74 @@
+@use '../base/variables' as v;
+
+legend {
+    font-size: 3rem;
+}
+
+label {
+    font-size: 2rem;
+}
+
+.select, .input-text {
+    padding: 0.5rem 1rem;
+    font-size: 2rem;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: v.$azul;
+    color: v.$blanco;
+    border: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    &:hover {
+        background-color: v.$azul_bajito;
+        transition: all ease 0.5s;
+        cursor: pointer;
+    }
+}
+
+.btn-danger {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: v.$btn_danger;
+    color: v.$blanco;
+    border: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    &:hover {
+        background-color: v.$btn_danger_hover;
+        transition: all ease 0.5s;
+        cursor: pointer;
+    }
+}
+
+.btn-secondary {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: v.$btn_secondary;
+    color: v.$blanco;
+    border: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    &:hover {
+        /*background-color: v.$btn_danger_hover;
+        transition: all ease 0.5s;*/
+        cursor: pointer;
+    }
+}
+
+.btn-success {
+    text-decoration: none;
+    padding: 1rem 2rem;
+    background-color: v.$success;
+    color: v.$blanco;
+    border: none;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    &:hover {
+        /*background-color: v.$btn_danger_hover;
+        transition: all ease 0.5s;*/
+        cursor: pointer;
+    }
+}

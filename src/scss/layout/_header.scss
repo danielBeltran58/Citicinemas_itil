@@ -1,0 +1,103 @@
+@use '../base/variables' as v;
+
+.img-header {
+    display: block;
+    width: 10%;
+}
+
+.contenedor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navegacion-header {
+        a {
+            color: v.$negro;
+            font-size: 2rem;
+            text-decoration: none;
+            margin-right: 2rem;
+        }
+        img {
+            width: 3rem;
+            height: 3rem;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+//Menu Lateral
+#menu-lateral {
+    background-color: #1c1c1c;
+    width: 20%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    #perfil {
+        margin-left: 1.5rem;
+        #foto {
+            img {
+                width: 50%;
+                display: block;
+                margin: 10% auto;
+            }
+        }
+        #nombre {
+            p {
+                font-size: 2rem;
+                color: v.$blanco;
+                text-align: justify;
+            }
+        }
+        #lugar-trabajo {
+            div {
+                display: flex;
+                p {
+                    font-size: 2rem;
+                    color: v.$blanco;
+                    text-align: justify;
+                }
+            }
+        }
+    }
+    #navegacion {
+        nav {
+            margin-top: 5rem;
+            a {
+                color: v.$blanco;
+                text-decoration: none;
+                font-size: 1.5rem;
+                display: block;
+                padding: 2rem 1.5rem;
+                &:hover {
+                    border-left: solid 1rem;
+                }
+            }
+        }
+    }
+    #sesion {
+        position: absolute;
+        bottom: 0;
+        .sesion-parte {
+            display: flex;
+            align-items: center;
+            padding: 2rem 1rem;
+            img {
+                width: 10%;
+            }
+            p {
+                color: v.$blanco;
+                font-size: 1.5rem;
+                margin-left: 1rem;
+                text-decoration: none;
+                &:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}
+
+.no-visible {
+    display: none;
+}

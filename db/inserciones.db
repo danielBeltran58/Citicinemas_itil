@@ -1,0 +1,276 @@
+use itil_v2;
+
+/* Complejo */
+insert into Complejo( id, nombre, direccion ) 
+values ( 'COM01', 'Citicinemas Galerias San Miguel', 'Cerro Monte Largo 4000-1880, Colinas de San Miguel, 80000 Culiacán Rosales, Sin.' );
+insert into Complejo( id, nombre, direccion ) 
+values ( 'COM02', 'Citicinemas La Isla', 'Cancún 1555, Fracc Musalá Isla Bonita, Raquet Club, 80060 Culiacán Rosales, Sin.' );
+insert into Complejo( id, nombre, direccion ) 
+values ( 'COR01', 'Citicinemas Corporativo', 'Centro Culiacán Rosales, Sin.' );
+/* Area Complejo */
+/*corporativo*/
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COR01SIS', 'SISTEMAS', 'COR01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COR01DIS', 'DISEÑO GRAFICO', 'COR01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COR01MARK', 'MARKETING', 'COR01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COR01DIRGEN', 'DIRECCION GENERAL', 'COR01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COR01REC', 'RECEPCION', 'COR01' );
+/*complejo galerias*/
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM01PRO', 'PROYECCION', 'COM01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM01TAQ', 'TAQUILLA', 'COM01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM01DUL', 'DULCERIA', 'COM01' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM01OFI', 'OFICINAS ADMINISTRATIVAS', 'COM01' );
+/*complejo la isla*/
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM02PRO', 'PROYECCION', 'COM02' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM02TAQ', 'TAQUILLA', 'COM02' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM02DUL', 'DULCERIA', 'COM02' );
+insert into AreaComplejo ( id, nombre, corporativo )
+values ( 'COM02OFI', 'OFICINAS ADMINISTRATIVAS', 'COM02' );
+/* Rol */
+insert into Rol ( id, nombre ) values ( 'JEFE', 'Jefe de area' );
+insert into Rol ( id, nombre ) values ( 'TECNICO', 'Tecnico' );
+insert into Rol ( id, nombre ) values ( 'EMPLEADO', 'Empleado' );
+/* EMPLEADOS DEL CORPORATIVO */
+/*jefes de area*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'MARTA', 'ZAMORA', 'MEDINA', 'marta_zamora@citicinemas.com', 'GUXrqIz6klUaf3n', 'JEFE', 'COR01SIS' );/*sistemas*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'MAICA', 'POSADA', 'CARRILLO', 'maica_posada@citicinemas.com', 'GUXrqIz6klUaf3n', 'JEFE', 'COR01DIS' );/*diseño grafico*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'SERGI', 'RENDON', 'RENDON', 'sergi_rendon@citicinemas.com', 'GUXrqIz6klUaf3n', 'JEFE', 'COR01MARK' );/*marketing*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'MIGUEL', 'ORELLANA', 'ELIZALDE', 'miguel_orellana@citicinemas.com', 'GUXrqIz6klUaf3n', 'JEFE', 'COR01DIRGEN' );/*direccion general*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'ANGEL', 'POSADA', 'LEYVA', 'angel_leiva@citicinemas.com', 'GUXrqIz6klUaf3n', 'JEFE', 'COR01REC' );/*recepcion*/
+/*tecnicos*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'JORGE', 'ZAMORA', 'COLLAZO', 'jorge_collazo@citicinemas.com', 'I9kFYiL3g6cPIgO', 'TECNICO', 'COR01SIS' );/*sistemas*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'PIO', 'RUELAS', 'ZAMORA', 'pio_ruelas@citicinemas.com', 'I9kFYiL3g6cPIgO', 'TECNICO', 'COR01SIS' );/*sistemas*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'SALVADOR', 'ZAMORA', 'SEVILLAS', 'salvador_sevilla@citicinemas.com', 'I9kFYiL3g6cPIgO', 'TECNICO', 'COR01SIS' );/*sistemas*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'JORDI', 'SALAS', 'SALAZAR', 'jordi_salas@citicinemas.com', 'GUXrqIz6klUaf3n', 'TECNICO', 'COR01DIS' );/*diseño grafico*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'JORGE', 'PANTOJA', 'RENDON', 'jorge_pantoja@citicinemas.com', 'GUXrqIz6klUaf3n', 'TECNICO', 'COR01MARK' );/*marketing*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'HERMENEGILDO', 'ORELLANA', 'BELTRAN', 'hermenegildo_fajardo@citicinemas.com', 'GUXrqIz6klUaf3n', 'TECNICO', 'COR01DIRGEN' );/*direccion general*/
+insert into Empleado ( nombre, apellidoP, apellidoM, email, contrasena, rol, areacomplejo )
+values ( 'MANUEL', 'PIÑA', 'LEYVA', 'manuel_pina@citicinemas.com', 'GUXrqIz6klUaf3n', 'TECNICO', 'COR01REC' );/*recepcion*/
+/* ACTIVOS EN CORPORATIVO */
+/*computadoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 1, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 2, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 3, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 4, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 5, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 6, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 7, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 8, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*sistemas*/
+/*impresoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 9, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 10, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 11, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 12, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 13, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+insert into Activo ( areaComplejo, estado ) values ( 'COR01SIS', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 14, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+/*activos en diseño grafico*/
+/*computadoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 15, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 16, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 17, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 18, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 19, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 20, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 21, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 22, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 23, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 24, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 26, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica  )
+values ( 27, 'iMac 24 pulgadas 2021', 'APPLE', 2000, 16, 'Apple M1 8 nucleos', 'GPU integrada 7 nucleos' );
+/*impresoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 28, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 29, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIS', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 30, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+/*activos en marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 39, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 40, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 41, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 42, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 43, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 44, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 45, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 46, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*marketing*/
+/*impresoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 47, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 48, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 49, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+insert into Activo ( areaComplejo, estado ) values ( 'COR01MARK', 1 );
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 50, 'CANON', 'PIXMA PRO-200', 1, 1, 1, 1 );
+/*activos en direccion general*/
+/*computadoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 59, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 60, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 61, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 62, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 63, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 64, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 65, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 66, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*direccion general*/
+/*impresoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01DIRGEN', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 67, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+/*activos recepcion*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01REC', '1' ); 
+insert into Computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica )
+values ( 68, 'HP 14-fq0033dx plata natural 14', 'HP', 512, 8, 'AMD Ryzen 3', 'Radeon RX Vega 3' );/*recepcion*/
+/*impresoras*/
+insert into Activo ( areaComplejo, estado ) values ( 'COR01REC', '1' ); 
+insert into Impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( 70, 'HP', 'HP Ink Advantage 2775', 3, 1, 7.5, 5.5);
+
+select activo.id, computadora.modelo, computadora.marca, computadora.almacenamiento, computadora.ram,
+computadora.procesador, computadora.tarjetaGrafica, activo.areaComplejo, activo.estado
+from Computadora
+inner join Activo on Computadora.activo = Activo.id where activo.areaComplejo = 'COR01REC';
+select activo.id, impresora.marca, impresora.modelo, impresora.tecnologiaImpresion, impresora.tipoConector, 
+impresora.velocidadImpresionMonocromatrica, impresora.velocidadImpresionColor,
+activo.areacomplejo, activo.estado
+from Impresora 
+inner join Activo on Impresora.activo = Activo.id where activo.areaComplejo = 'COR01REC';
+
+/* 
+PRUEBAS GENERALES
+*/
+select * 
+from empleado 
+where empleado.areaComplejo = 'COR01DIS';
+
+select areacomplejo.nombre from areacomplejo where areacomplejo.id = 'COR01SIS';
+select complejo.nombre
+from areacomplejo
+inner join complejo on complejo.id = areacomplejo.corporativo
+where areacomplejo.id = 'COR01SIS';
+
+select * from activo where activo.areaComplejo = 'COR01SIS';
+select * from activo inner join Computadora on activo.id = computadora.activo where activo.areaComplejo = 'COR01SIS';
+select * from activo inner join Impresora on activo.id = impresora.activo where activo.areaComplejo = 'COR01SIS';
+select * from empleado where empleado.areaComplejo = 'COR01SIS' and empleado.rol = 'TECNICO';
+
+select *
+from Rol;
+
+select * from empleado;
+select * from incidencia;
+delete from Incidencia where id = 1;
+
+select * from empleado where rol = 'TECNICO';

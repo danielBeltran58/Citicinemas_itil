@@ -1,0 +1,83 @@
+use itil_v2;
+
+delimiter //
+create procedure registrar_computadora(
+in p_modelo varchar(150), 
+in p_marca varchar(30), 
+in p_sistemaOperativo varchar(50),
+in p_almacenamiento char(4), 
+in p_ram char(2), 
+in p_procesador varchar(50), 
+in p_tarjetaGrafica varchar(100),
+in p_areaComplejo varchar(15)
+)
+begin
+insert into activo ( areaComplejo, estado ) values ( p_areaComplejo, '1' );
+set @idActivoComputadora = ( select max(id) from activo );
+insert into computadora ( activo, modelo, marca, almacenamiento, ram, procesador, tarjetaGrafica, sistemaOperativo )
+values ( @idActivoComputadora, p_modelo, p_marca, p_almacenamiento, p_ram, p_procesador, p_tarjetaGrafica, p_sistemaOperativo );
+end //
+delimiter ;
+
+delimiter //
+create procedure registrar_impresora(
+in p_modelo varchar(150), 
+in p_marca varchar(30),
+in p_tipoConector char(1),
+in p_tecnologiaImpresion char(1),
+in p_velocidadImpresionColor float,
+in p_velocidadImpresionMonocromatrica float,
+in p_areaComplejo varchar(15)
+)
+begin
+insert into activo ( areaComplejo, estado ) values ( p_areaComplejo, '1' );
+set @idActivoImpresora = ( select max(id) from activo );
+insert into impresora ( activo, marca, modelo, tipoConector, tecnologiaImpresion, velocidadImpresionMonocromatrica, velocidadImpresionColor )
+values ( @idActivoImpresora, p_marca, p_modelo, p_tipoConector, p_tecnologiaImpresion, p_velocidadImpresionMonocromatrica, p_velocidadImpresionColor  );
+end //
+delimiter ;
+
+delimiter //
+create procedure levantar_incidencia(
+in p_activo int,
+in p_asunto longtext,
+in p_tecnico int,
+in p_inicio date,
+in p_termino date
+)
+begin 
+insert into incidencia ( activo, asunto, tecnico, inicio, termino, estado )
+values ( p_activo, p_asunto, p_tecnico, p_inicio, p_termino, '1' );
+update activo set estado = '2' where activo.id = p_activo;
+end //
+delimiter ;
+
+delimiter //
+/*create procedure cambiar_estado_incidencia(
+in p_estado char(1),
+in p_idIncidencia int
+)
+begin
+update incidencia set estado = p_estado where incidencia.id = p_idIncidencia;
+
+end //
+delimiter ;*/
+
+select * from activo;
+select * from computadora;
+select * from impresora;
+select * from incidencia;
+
+select * from ((incidencia
+inner join activo on activo.id = incidencia.activo)
+inner join computadora on computadora.activo = activo.id)
+where activo.areaComplejo = 'COR01SIS';
+
+select incidencia.id as idIncidencia, activo.id as idActivo, incidencia.asunto as asunto, 
+incidencia.tecnico as tecnico, incidencia.inicio as inicio, incidencia.termino as termino, incidencia.estado as estado 
+from ((incidencia
+inner join activo on activo.id = incidencia.activo)
+inner join impresora on impresora.activo = activo.id)
+where incidencia.tecnico = 7;
+
+select * from empleado where nombre and apellidoP and apellidoM like 'JORGE ZAMORA COLLAZO';
